@@ -10,7 +10,7 @@ main {
   padding-bottom: 14rem;
 }
 
-.lampu-lalu-lintas {
+.traffic-light {
   background-color: #3d3d3d;
   max-width: fit-content;
   display: flex;
@@ -32,35 +32,35 @@ main {
   transform: translate(50%, 100%);
 }
 
-.merah {
+.red-light {
   background-color: maroon;
   width: 120px;
   height: 120px;
   border-radius: 50%;
 }
 
-.kuning {
+.yellow-light {
   background-color: #615400;
   width: 120px;
   height: 120px;
   border-radius: 50%;
 }
 
-.hijau {
+.green-light {
   background-color: #005826;
   width: 120px;
   height: 120px;
   border-radius: 50%;
 }
 
-.merah-nyala {
+.red-light-nyala {
   background-color: rgb(255, 0, 0);
 }
 
-.kuning-nyala {
+.yellow-light-nyala {
   background-color: #ffdd00;
 }
 
-.hijau-nyala {
+.green-light-nyala {
   background-color: #00ff6e;
 }

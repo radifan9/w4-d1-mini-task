@@ -34,8 +34,9 @@ let sum = 0;
 let count = 0;
 
 const allScore = document.querySelectorAll("#data-table tbody tr");
-console.log(allScore);
+// console.log(allScore);
 allScore.forEach((element) => {
+  console.log(element);
   sum = sum + parseInt(element.cells[1].firstChild.data);
   count++;
 });

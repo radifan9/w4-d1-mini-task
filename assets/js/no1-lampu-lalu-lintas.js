@@ -1,29 +1,29 @@
-// Mulai dengan lampu merah
-let currentLamp = "merah";
+// Mulai dengan lampu red-light
+let currentLamp = "red-light";
 
-const delayLampuLaluLintas = (currentLamp) => {
+const delayTrafficLight = (currentLamp) => {
   return new Promise((resolve) => {
-    const startTime = Date.now();
+    const startTime = Date.now(); //
     switch (currentLamp) {
-      case "merah":
-        // Jika sekarang warna merah maka kasih delay 3s sebelum ke kuning
+      case "red-light":
+        // Jika sekarang warna red-light maka kasih delay 3s sebelum ke yellow-light
         setTimeout(() => {
           console.log(`Delay waktu : ${Date.now() - startTime} ms`);
-          resolve("kuning");
+          resolve("yellow-light");
         }, 3000);
         break;
 
-      case "kuning":
+      case "yellow-light":
         setTimeout(() => {
           console.log(`Delay waktu : ${Date.now() - startTime} ms`);
-          resolve("hijau");
+          resolve("green-light");
         }, 2000);
         break;
 
-      case "hijau":
+      case "green-light":
         setTimeout(() => {
           console.log(`Delay waktu : ${Date.now() - startTime} ms`);
-          resolve("merah");
+          resolve("red-light");
         }, 3000);
         break;
     }
@@ -34,26 +34,26 @@ const jalankanLampuLaluLintas = async (currentLamp) => {
   try {
     while (true) {
       console.log(`Lampu sekarang yang nyala : ${currentLamp}`);
-      currentLamp = await delayLampuLaluLintas(currentLamp);
+      currentLamp = await delayTrafficLight(currentLamp);
 
-      let lampuMerah = document.querySelector(".merah");
-      let lampuKuning = document.querySelector(".kuning");
-      let lampuHijau = document.querySelector(".hijau");
+      let redLight = document.querySelector(".red-light");
+      let yellowLight = document.querySelector(".yellow-light");
+      let greenLight = document.querySelector(".green-light");
 
       switch (currentLamp) {
-        case "merah":
-          lampuHijau.classList.toggle("hijau-nyala");
-          lampuMerah.classList.add("merah-nyala");
+        case "red-light":
+          greenLight.classList.toggle("green-light-nyala");
+          redLight.classList.add("red-light-nyala");
           break;
 
-        case "kuning":
-          lampuMerah.classList.toggle("merah-nyala");
-          lampuKuning.classList.add("kuning-nyala");
+        case "yellow-light":
+          redLight.classList.toggle("red-light-nyala");
+          yellowLight.classList.add("yellow-light-nyala");
           break;
 
-        case "hijau":
-          lampuKuning.classList.toggle("kuning-nyala");
-          lampuHijau.classList.add("hijau-nyala");
+        case "green-light":
+          yellowLight.classList.toggle("yellow-light-nyala");
+          greenLight.classList.add("green-light-nyala");
           break;
       }
     }
