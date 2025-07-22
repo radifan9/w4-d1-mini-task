@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lampu-lalu-lintas {
+  background-color: #3d3d3d;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.merah {
+  background-color: maroon;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.kuning {
+  background-color: #615400;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.hijau {
+  background-color: #005826;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.merah-nyala {
+  background-color: rgb(255, 0, 0);
+}
+
+.kuning-nyala {
+  background-color: #ffdd00;
+}
+
+.hijau-nyala {
+  background-color: #00ff6e;
+}
