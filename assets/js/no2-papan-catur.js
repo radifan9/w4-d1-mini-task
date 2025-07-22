@@ -1,5 +1,6 @@
 let papanCatur = [];
 let row = "ganjil";
+const body = document.querySelector(".papan-catur");
 
 for (let i = 1; i <= 64; i++) {
   if (row == "ganjil") {
@@ -7,25 +8,24 @@ for (let i = 1; i <= 64; i++) {
       // Ganjil, masukkan putih
       const newPutih = document.createElement("div");
       newPutih.classList.add("putih");
-      // papanCatur.push(newPutih);
-      papanCatur.append(newPutih);
+      body.append(newPutih);
     } else {
       // Genap, masukkan hitam
       const newHitam = document.createElement("div");
       newHitam.classList.add("hitam");
-      // papanCatur.push(newHitam);
+      body.append(newHitam);
     }
   } else {
     if (!(i % 2 == 0)) {
       // Genap, masukkan hitam
       const newHitam = document.createElement("div");
       newHitam.classList.add("hitam");
-      // papanCatur.push(newHitam);
+      body.append(newHitam);
     } else {
       // Ganjil, masukkan putih
       const newPutih = document.createElement("div");
       newPutih.classList.add("putih");
-      // papanCatur.push(newPutih);
+      body.append(newPutih);
     }
   }
 
@@ -37,6 +37,3 @@ for (let i = 1; i <= 64; i++) {
     }
   }
 }
-
-const body = document.querySelector(".papan-catur");
-body.append(papanCatur);
