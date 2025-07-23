@@ -1,64 +1,29 @@
 "use strict";
 
-// const selector = ".data-table";
+// A
+// Added a new row with the name of charlie and the value of 92
 const tbody = document.querySelector("#data-table tbody");
-
 const newRow = document.createElement("tr");
-
-const newTd = document.createElement("td");
-const newText = document.createTextNode("Carlie");
-newTd.append(newText);
-
-const newTd2 = document.createElement("td");
-const newText2 = document.createTextNode("92");
-newTd2.append(newText2);
-
-newRow.append(newTd);
-newRow.append(newTd2);
-
+newRow.innerHTML = "<td>Carlie</td><td>92</td>";
 tbody.append(newRow);
 
-// b
-const bob = document.querySelector(
-  "#data-table tbody tr:nth-child(2) td:nth-child(2)"
-);
-bob.innerHTML = "89";
+// B
+tbody.querySelector("tr:nth-child(2) td:nth-child(2)").textContent = "89";
 
-// c
-const alice = document.querySelector("#data-table tbody tr:nth-child(1)");
-alice.classList.add("top-scorer");
+// C
+// Add "top-scorer" class to alice
+tbody.querySelector("tr:nth-child(1)").classList.add("top-scorer");
 
-// d
+// D
 // Dapatkan nilai rata-rata
-let sum = 0;
-let count = 0;
-
-const allScore = document.querySelectorAll("#data-table tbody tr");
-// console.log(allScore);
-allScore.forEach((element) => {
-  console.log(element);
-  sum = sum + parseInt(element.cells[1].firstChild.data);
+let sum = 0,
+  count = 0;
+tbody.querySelectorAll("tr").forEach((tr) => {
+  sum += parseInt(tr.cells[1].textContent);
   count++;
 });
-
 const average = sum / count;
-console.log(average);
-// Tambahkan footer
-const table = document.querySelector("#data-table");
-const addTFoot = document.createElement("tfoot");
-const addTR = document.createElement("tr");
 
-// TD average score
-const tdAverageData = document.createElement("td");
-const textAverage = document.createTextNode(average);
-
-const trAverage = document.createElement("td");
-const textTRAverage = document.createTextNode("Average");
-
-tdAverageData.append(textAverage);
-
-trAverage.append(textTRAverage);
-addTR.append(trAverage);
-addTR.append(tdAverageData);
-addTFoot.append(addTR);
-table.append(addTFoot);
+const tfoot = document.createElement("tfoot");
+tfoot.innerHTML = `<tr><td>Average</td><td>${average}</td></tr>`;
+document.querySelector("#data-table").append(tfoot);
